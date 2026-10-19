@@ -23,8 +23,7 @@ describe('searchProducts', () => {
   });
 
   test("'ЧЕХОЛ' возвращает товар с ID 5", () => {
-    const foundItem = products.find(item => item.name.includes('ЧЕХОЛ'));
-    if (!foundItem) return;
+    const foundItem = products.find(item => item.id === 5);
     expect(searchProducts(products, 'ЧЕХОЛ')).toEqual([foundItem]);
   });
 
