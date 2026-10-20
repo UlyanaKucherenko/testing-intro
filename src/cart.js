@@ -40,8 +40,13 @@ function changeQuantity(cart, productId, newQuantity) {
   );
 }
 
+function removeFromCart(cart, productId) {
+  const foundItem = cart.find((item) => item.id === productId);
 
-function removeFromCart() { return notImplemented(); }
+  if (!foundItem) return cart;
+  return cart.filter(item => item.id !== productId)
+}
+
 function calculateCartSubtotal() { return notImplemented(); }
 function calculateOrderTotal() { return notImplemented(); }
 
